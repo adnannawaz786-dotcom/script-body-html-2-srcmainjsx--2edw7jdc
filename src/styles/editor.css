@@ -1,0 +1,311 @@
+/* Editor Container Styles */
+.editor-container {
+  @apply min-h-screen bg-background;
+}
+
+.editor-layout {
+  @apply flex flex-col h-screen;
+}
+
+/* Toolbar Styles */
+.toolbar {
+  @apply border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50;
+}
+
+.toolbar-content {
+  @apply flex items-center gap-2 p-3;
+}
+
+.toolbar-group {
+  @apply flex items-center gap-1 px-2 py-1;
+}
+
+.toolbar-separator {
+  @apply w-px h-6 bg-border mx-2;
+}
+
+.toolbar-button {
+  @apply inline-flex items-center justify-center rounded-md text-sm font-medium 
+         transition-colors focus-visible:outline-none focus-visible:ring-2 
+         focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 
+         disabled:pointer-events-none ring-offset-background h-9 px-3 
+         hover:bg-accent hover:text-accent-foreground;
+}
+
+.toolbar-button.active {
+  @apply bg-accent text-accent-foreground;
+}
+
+.toolbar-select {
+  @apply flex h-9 w-full items-center justify-between rounded-md border 
+         border-input bg-background px-3 py-2 text-sm ring-offset-background 
+         placeholder:text-muted-foreground focus:outline-none focus:ring-2 
+         focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed 
+         disabled:opacity-50;
+}
+
+/* Editor Content Area */
+.editor-content {
+  @apply flex-1 flex overflow-hidden;
+}
+
+.editor-main {
+  @apply flex-1 flex flex-col;
+}
+
+.editor-wrapper {
+  @apply flex-1 p-6 overflow-auto;
+}
+
+.editor-document {
+  @apply max-w-4xl mx-auto bg-white shadow-sm border rounded-lg min-h-full;
+}
+
+.editor-page {
+  @apply p-12 min-h-[297mm] bg-white;
+}
+
+/* Rich Text Editor Styles */
+.prose-editor {
+  @apply prose prose-slate max-w-none focus:outline-none;
+}
+
+.prose-editor h1 {
+  @apply text-3xl font-bold text-gray-900 mb-4;
+}
+
+.prose-editor h2 {
+  @apply text-2xl font-semibold text-gray-800 mb-3;
+}
+
+.prose-editor h3 {
+  @apply text-xl font-medium text-gray-800 mb-2;
+}
+
+.prose-editor p {
+  @apply text-gray-700 leading-relaxed mb-4;
+}
+
+.prose-editor ul, .prose-editor ol {
+  @apply mb-4 pl-6;
+}
+
+.prose-editor li {
+  @apply mb-1;
+}
+
+.prose-editor blockquote {
+  @apply border-l-4 border-blue-500 pl-4 italic text-gray-600 my-4;
+}
+
+.prose-editor code {
+  @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono;
+}
+
+.prose-editor pre {
+  @apply bg-gray-100 p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.prose-editor pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose-editor a {
+  @apply text-blue-600 hover:text-blue-800 underline;
+}
+
+.prose-editor strong {
+  @apply font-semibold;
+}
+
+.prose-editor em {
+  @apply italic;
+}
+
+.prose-editor u {
+  @apply underline;
+}
+
+.prose-editor s {
+  @apply line-through;
+}
+
+/* Text Formatting Styles */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* Font Size Classes */
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-3xl { font-size: 1.875rem; }
+.text-4xl { font-size: 2.25rem; }
+
+/* Font Family Classes */
+.font-serif { font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
+.font-sans { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; }
+.font-mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace; }
+
+/* File Handler Styles */
+.file-handler {
+  @apply flex items-center gap-4 p-4 border-b bg-muted/30;
+}
+
+.file-upload-area {
+  @apply border-2 border-dashed border-gray-300 rounded-lg p-8 text-center 
+         hover:border-gray-400 transition-colors cursor-pointer;
+}
+
+.file-upload-area.dragover {
+  @apply border-blue-500 bg-blue-50;
+}
+
+.file-info {
+  @apply flex items-center gap-2 text-sm text-muted-foreground;
+}
+
+.file-actions {
+  @apply flex items-center gap-2;
+}
+
+/* Status and Loading Styles */
+.status-indicator {
+  @apply flex items-center gap-2 text-sm;
+}
+
+.status-saved {
+  @apply text-green-600;
+}
+
+.status-saving {
+  @apply text-yellow-600;
+}
+
+.status-error {
+  @apply text-red-600;
+}
+
+.loading-spinner {
+  @apply animate-spin rounded-full h-4 w-4 border-2 border-gray-300 border-t-blue-600;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .toolbar-content {
+    @apply flex-wrap gap-1 p-2;
+  }
+  
+  .toolbar-group {
+    @apply px-1;
+  }
+  
+  .editor-wrapper {
+    @apply p-3;
+  }
+  
+  .editor-page {
+    @apply p-6;
+  }
+  
+  .file-handler {
+    @apply flex-col items-start gap-2;
+  }
+}
+
+@media (max-width: 640px) {
+  .toolbar-button {
+    @apply h-8 px-2 text-xs;
+  }
+  
+  .editor-document {
+    @apply shadow-none border-0 rounded-none;
+  }
+  
+  .editor-page {
+    @apply p-4;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .toolbar,
+  .file-handler {
+    @apply hidden;
+  }
+  
+  .editor-document {
+    @apply shadow-none border-0 m-0;
+  }
+  
+  .editor-page {
+    @apply p-0 m-0;
+  }
+  
+  .prose-editor {
+    @apply text-black;
+  }
+}
+
+/* Focus and Selection Styles */
+.editor-content:focus-within {
+  @apply outline-none;
+}
+
+.prose-editor *::selection {
+  @apply bg-blue-200;
+}
+
+/* Custom Scrollbar */
+.editor-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.editor-wrapper::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+.editor-wrapper::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+.editor-wrapper::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* Animation Classes */
+.fade-in {
+  @apply animate-in fade-in duration-200;
+}
+
+.slide-in {
+  @apply animate-in slide-in-from-top-2 duration-200;
+}
+
+/* Utility Classes */
+.editor-hidden {
+  @apply hidden;
+}
+
+.editor-visible {
+  @apply block;
+}
+
+.editor-disabled {
+  @apply opacity-50 pointer-events-none;
+}
